@@ -9,6 +9,15 @@ return {
               buildFlags = {
                 "-tags=integration,unit",
               },
+              hints = {
+                assignVariableTypes = false,
+                compositeLiteralFields = false,
+                compositeLiteralTypes = false,
+                constantValues = false,
+                functionTypeParameters = false,
+                parameterNames = false,
+                rangeVariableTypes = false,
+              },
             },
           },
         },
