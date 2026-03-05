@@ -141,40 +141,6 @@ eval "$(pyenv init -)"
 # asdf version manager
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
-# Sesh session switcher - Press Alt-s to open (enhanced with preview & icons)
-function sesh-sessions() {
-  {
-    exec </dev/tty
-    exec <&1
-    local session
-    session=$(sesh list -i -t -c -z | fzf \
-      --ansi \
-      --no-sort \
-      --height 90% \
-      --reverse \
-      --border-label ' sesh ' \
-      --border \
-      --prompt '⚡  ' \
-      --header 'ctrl-t: tmux | ctrl-g: configs | ctrl-x: zoxide | ctrl-d: kill' \
-      --bind 'tab:down,btab:up' \
-      --bind 'ctrl-t:change-prompt(⚡ tmux> )+reload(sesh list -i -t)' \
-      --bind 'ctrl-g:change-prompt(⚙️  config> )+reload(sesh list -i -c)' \
-      --bind 'ctrl-x:change-prompt(📁 zoxide> )+reload(sesh list -i -z)' \
-      --bind 'ctrl-d:execute(tmux kill-session -t {})+reload(sesh list -i -t -c -z)' \
-      --preview 'sesh preview {} || tmux capture-pane -ep -t {} 2>/dev/null' \
-      --preview-window 'right:60%' \
-    )
-    zle reset-prompt > /dev/null 2>&1 || true
-    [[ -z "$session" ]] && return
-    sesh connect $session
-  }
-}
-
-zle     -N             sesh-sessions
-bindkey -M emacs '\es' sesh-sessions
-bindkey -M vicmd '\es' sesh-sessions
-bindkey -M viins '\es' sesh-sessions
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
