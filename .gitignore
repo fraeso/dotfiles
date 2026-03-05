@@ -1,6 +1,6 @@
 neofetch/
 
-# ignore submodules
+# ignore useless configs
 tmux/plugins/*
 gh/
 
@@ -9,3 +9,5 @@ configstore/
 swiftpm/
 
 Futu-Mac/
+
+glow.yml
