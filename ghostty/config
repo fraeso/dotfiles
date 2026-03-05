@@ -36,7 +36,7 @@ font-style = Bold
 # font-family-bold = SF Mono Heavy
 
 # background
-background-blur-radius = 25
+background-blur-radius = 40 
 background-opacity = 0.9
 
 # window settings
@@ -47,10 +47,12 @@ window-padding-x = 15
 window-padding-y = 5
 
 # ghostty icon
-macos-icon = xray
-# macos-icon-ghost-color =
-# macos-icon-screen-color =
-# macos-icon-frame = 
+# macos-icon = official
+macos-icon = paper
+# macos-icon = blueprint
+# macos-icon = holographic
+# macos-icon = retro
+# macos-icon = glass
 
 # misc
 mouse-hide-while-typing = true
