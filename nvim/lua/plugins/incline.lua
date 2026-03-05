@@ -26,7 +26,7 @@ return {
             table.insert(labels, { icons.removed .. signs.delete .. " ", group = "DiffDelete" })
           end
           if #labels > -1 then
-            table.insert(labels, { "┊ " })
+            table.insert(labels, { " ┊ " })
           end
           return labels
         end
