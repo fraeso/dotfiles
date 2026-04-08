@@ -1,51 +1,22 @@
-### configs here ###
+"$schema" = 'https://starship.rs/config-schema.json'
 
-format = """
-$directory\
-$git_branch\
-$git_status\
-$all\
-$os\
-$line_break\
-$time\
-$character"""
-
-add_newline = true
-
-[time]
-format = '[](bold blue) [at]() [$time]($style) '
-style = "bold yellow"
-utc_time_offset = "local"
-disabled = false
-use_12hr = false
-
-[os]
-format = "[via]() [$symbol\\(MacOS\\)]($style)"
-style = "blue"
-disabled = false
-
-[character]
-success_symbol = "[➜](bold green)"
-error_symbol = "[✗](bold red)"
-
-[git_status]
-format = '([\[$modified$staged$renamed$deleted\]](bold red) )([\[$ahead_behind\]](bold red) )'
-ahead = '↑${count}'
-behind = '↓${count}'
-diverged = '↑${ahead_count}↓${behind_count}'
-
-### end of configs ###
-
-
-# icon symbol formatting
 [aws]
 symbol = " "
 
 [buf]
 symbol = " "
 
+[bun]
+symbol = " "
+
 [c]
 symbol = " "
+
+[cpp]
+symbol = " "
+
+[cmake]
+symbol = " "
 
 [conda]
 symbol = " "
@@ -56,9 +27,11 @@ symbol = " "
 [dart]
 symbol = " "
 
+[deno]
+symbol = " "
+
 [directory]
 read_only = " 󰌾"
-truncation_length = 0
 
 [docker_context]
 symbol = " "
@@ -72,19 +45,26 @@ symbol = " "
 [fennel]
 symbol = " "
 
+[fortran]
+symbol = " "
+
 [fossil_branch]
 symbol = " "
 
+[gcloud]
+symbol = " "
+
 [git_branch]
 symbol = " "
-style = "bold bright-blue"
 
 [git_commit]
 tag_symbol = '  '
 
 [golang]
 symbol = " "
-style = "bright-green"
+
+[gradle]
+symbol = " "
 
 [guix_shell]
 symbol = " "
@@ -137,11 +117,14 @@ Alpine = " "
 AlmaLinux = " "
 Amazon = " "
 Android = " "
+AOSC = " "
 Arch = " "
 Artix = " "
+CachyOS = " "
 CentOS = " "
 Debian = " "
 DragonFly = " "
+Elementary = " "
 Emscripten = " "
 EndeavourOS = " "
 Fedora = " "
@@ -150,6 +133,7 @@ Garuda = "󰛓 "
 Gentoo = " "
 HardenedBSD = "󰞌 "
 Illumos = "󰈸 "
+Ios = "󰀷 "
 Kali = " "
 Linux = " "
 Mabox = " "
@@ -160,6 +144,7 @@ MidnightBSD = " "
 Mint = " "
 NetBSD = " "
 NixOS = " "
+Nobara = " "
 OpenBSD = "󰈺 "
 openSUSE = " "
 OracleLinux = "󰌷 "
@@ -175,6 +160,7 @@ Ubuntu = " "
 Unknown = " "
 Void = " "
 Windows = "󰍲 "
+Zorin = " "
 
 [package]
 symbol = "󰏗 "
@@ -187,6 +173,9 @@ symbol = " "
 
 [pijul_channel]
 symbol = " "
+
+[pixi]
+symbol = "󰏗 "
 
 [python]
 symbol = " "
@@ -203,11 +192,14 @@ symbol = "󱘗 "
 [scala]
 symbol = " "
 
+[status]
+symbol = " "
+
 [swift]
 symbol = " "
 
+[xmake]
+symbol = " "
+
 [zig]
 symbol = " "
-
-[gradle]
-symbol = " "
