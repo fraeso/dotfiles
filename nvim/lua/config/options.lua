@@ -45,3 +45,6 @@ vim.opt.shortmess:append("A")
 -- disable indent lines
 vim.opt.list = false
 vim.opt.listchars = ""
+
+-- Disable LazyVim's autoformat
+vim.g.autoformat = false
