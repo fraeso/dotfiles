@@ -15,7 +15,7 @@ return {
       menu = {
         auto_show = true,
         border = "rounded",
-        winhighlight = "Normal:BlinkCmpMenu,FloatBorder:BlinkCmpMenuBorder,CursorLine:BlinkCmpMenuSelection,Search:None",
+        winhighlight = "Normal:Pmenu,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
         scrollbar = true,
       },
       documentation = {
