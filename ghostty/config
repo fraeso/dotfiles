@@ -21,9 +21,10 @@ theme = vague
 font-size = 18
 
 # font-family = CaskaydiaCove Nerd Font
-# font-family = JetBrains Mono 
-font-family = FiraCode Nerd Font Mono
-font-family-bold = Bold
+font-family = JetBrains Mono 
+
+# font-family = FiraCode Nerd Font Mono
+# font-family-bold = Bold
 
 # font-family = SF Mono
 # font-family = Menlo
@@ -56,3 +57,19 @@ macos-option-as-alt=true
 keybind = shift+enter=text:\n
 window-theme = "auto"
 macos-titlebar-style = tabs
+
+# vim-style pane navigation
+keybind = cmd+option+h=goto_split:left
+keybind = cmd+option+j=goto_split:down
+keybind = cmd+option+k=goto_split:up
+keybind = cmd+option+l=goto_split:right
+
+# unbind arrow key navigation
+keybind = cmd+option+left=unbind
+keybind = cmd+option+right=unbind
+keybind = cmd+option+up=unbind
+keybind = cmd+option+down=unbind
+
+# pane/split settings
+unfocused-split-opacity = 0.4
+split-divider-color = #6e738d
