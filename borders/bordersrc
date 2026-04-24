@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# White standard
+# options=(
+# 	style=round
+# 	width=6.0
+# 	hidpi=on
+# 	active_color=0xffe2e2e3
+# 	inactive_color=0xff414550
+# )
+
+# Gradient — fancy two-tone
+options=(
+	style=round
+	width=6.0
+	hidpi=on
+	active_color="gradient(top_left=0xffff5a96,bottom_right=0xffcba6f7)"
+	inactive_color=0x00000000
+)
+
+borders "${options[@]}"
