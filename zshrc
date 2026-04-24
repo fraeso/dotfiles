@@ -124,9 +124,6 @@ alias vim="nvim"
 alias cd="z"
 eval "$(zoxide init zsh)"
 
-# terminal apple icon
-neofetch
-
 # Golang
 export PATH=$PATH:$(go env GOPATH)/bin
 
@@ -147,6 +144,8 @@ eval "$(~/.local/bin/mise activate)"
 
 # flutter
 export PATH="$HOME/fvm/default/bin:$PATH"
+
+fastfetch -c examples/22.jsonc
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
