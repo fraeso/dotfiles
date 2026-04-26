@@ -63,6 +63,12 @@ run= [
   "layout floating",
 ]
 
+[[on-window-detected]]
+if.app-id="com.apple.finder"
+run= [
+  "layout floating",
+]
+
 # Possible values: (qwerty|dvorak|colemak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
 [key-mapping]
@@ -117,116 +123,109 @@ run= [
     # end tell'
     # '''
 
-    # Enter window mode — all aerospace bindings live there. Exit with esc.
-    shift-alt-a = 'mode window'
-
-# 'window' binding mode — entered with alt-a, exit with esc.
-[mode.window.binding]
-    esc = 'mode main'
+    # Hyper = caps lock (via Hyperkey) → ctrl+alt+cmd. Shift layers on top.
 
     # focus
-    h = 'focus left'
-    j = 'focus down'
-    k = 'focus up'
-    l = 'focus right'
+    cmd-alt-ctrl-h = 'focus left'
+    cmd-alt-ctrl-j = 'focus down'
+    cmd-alt-ctrl-k = 'focus up'
+    cmd-alt-ctrl-l = 'focus right'
 
     # move window
-    shift-h = 'move left'
-    shift-j = 'move down'
-    shift-k = 'move up'
-    shift-l = 'move right'
-
-    # resize
-    minus = 'resize smart -50'
-    equal = 'resize smart +50'
-
-    # layout
-    slash = 'layout tiles horizontal vertical'
-    comma = 'layout accordion horizontal vertical'
-    period = 'layout floating tiling'
-
-    # fullscreen
-    enter = 'fullscreen'
-    shift-enter = 'fullscreen'
+    cmd-alt-ctrl-shift-h = 'move left'
+    cmd-alt-ctrl-shift-j = 'move down'
+    cmd-alt-ctrl-shift-k = 'move up'
+    cmd-alt-ctrl-shift-l = 'move right'
 
     # join-with (nest with neighbor)
-    ctrl-h = 'join-with left'
-    ctrl-j = 'join-with down'
-    ctrl-k = 'join-with up'
-    ctrl-l = 'join-with right'
+    cmd-alt-ctrl-left  = 'join-with left'
+    cmd-alt-ctrl-down  = 'join-with down'
+    cmd-alt-ctrl-up    = 'join-with up'
+    cmd-alt-ctrl-right = 'join-with right'
 
-    # reset layout / close all but current / reload config
-    0 = 'flatten-workspace-tree'
-    backspace = 'close-all-windows-but-current'
-    ctrl-shift-r = 'reload-config'
+    # resize
+    cmd-alt-ctrl-minus = 'resize smart -50'
+    cmd-alt-ctrl-equal = 'resize smart +50'
+
+    # layout
+    cmd-alt-ctrl-slash = 'layout tiles horizontal vertical'
+    cmd-alt-ctrl-comma = 'layout accordion horizontal vertical'
+    cmd-alt-ctrl-period = 'layout floating tiling'
+
+    # fullscreen
+    cmd-alt-ctrl-enter = 'fullscreen'
+
+    # reset layout / close all but current
+    cmd-alt-ctrl-0 = 'flatten-workspace-tree'
+    cmd-alt-ctrl-backspace = 'close-all-windows-but-current'
 
     # workspaces
-    1 = 'workspace 1'
-    2 = 'workspace 2'
-    3 = 'workspace 3'
-    4 = 'workspace 4'
-    5 = 'workspace 5'
-    6 = 'workspace 6'
-    7 = 'workspace 7'
-    8 = 'workspace 8'
-    9 = 'workspace 9'
-    a = 'workspace A'
-    b = 'workspace B'
-    c = 'workspace C'
-    d = 'workspace D'
-    e = 'workspace E'
-    f = 'workspace F'
-    g = 'workspace G'
-    i = 'workspace I'
-    m = 'workspace M'
-    n = 'workspace N'
-    o = 'workspace O'
-    p = 'workspace P'
-    q = 'workspace Q'
-    r = 'workspace R'
-    s = 'workspace S'
-    t = 'workspace T'
-    u = 'workspace U'
-    v = 'workspace V'
-    w = 'workspace W'
-    x = 'workspace X'
-    y = 'workspace Y'
-    z = 'workspace Z'
+    cmd-alt-ctrl-1 = 'workspace 1'
+    cmd-alt-ctrl-2 = 'workspace 2'
+    cmd-alt-ctrl-3 = 'workspace 3'
+    cmd-alt-ctrl-4 = 'workspace 4'
+    cmd-alt-ctrl-5 = 'workspace 5'
+    cmd-alt-ctrl-6 = 'workspace 6'
+    cmd-alt-ctrl-7 = 'workspace 7'
+    cmd-alt-ctrl-8 = 'workspace 8'
+    cmd-alt-ctrl-9 = 'workspace 9'
+    cmd-alt-ctrl-a = 'workspace A'
+    cmd-alt-ctrl-b = 'workspace B'
+    cmd-alt-ctrl-c = 'workspace C'
+    cmd-alt-ctrl-d = 'workspace D'
+    cmd-alt-ctrl-e = 'workspace E'
+    cmd-alt-ctrl-f = 'workspace F'
+    cmd-alt-ctrl-g = 'workspace G'
+    cmd-alt-ctrl-i = 'workspace I'
+    cmd-alt-ctrl-m = 'workspace M'
+    cmd-alt-ctrl-n = 'workspace N'
+    cmd-alt-ctrl-o = 'workspace O'
+    cmd-alt-ctrl-p = 'workspace P'
+    cmd-alt-ctrl-q = 'workspace Q'
+    cmd-alt-ctrl-r = 'workspace R'
+    cmd-alt-ctrl-s = 'workspace S'
+    cmd-alt-ctrl-t = 'workspace T'
+    cmd-alt-ctrl-u = 'workspace U'
+    cmd-alt-ctrl-v = 'workspace V'
+    cmd-alt-ctrl-w = 'workspace W'
+    cmd-alt-ctrl-x = 'workspace X'
+    cmd-alt-ctrl-y = 'workspace Y'
+    cmd-alt-ctrl-z = 'workspace Z'
 
     # move-node-to-workspace
-    shift-1 = 'move-node-to-workspace 1'
-    shift-2 = 'move-node-to-workspace 2'
-    shift-3 = 'move-node-to-workspace 3'
-    shift-4 = 'move-node-to-workspace 4'
-    shift-5 = 'move-node-to-workspace 5'
-    shift-6 = 'move-node-to-workspace 6'
-    shift-7 = 'move-node-to-workspace 7'
-    shift-8 = 'move-node-to-workspace 8'
-    shift-9 = 'move-node-to-workspace 9'
-    shift-a = 'move-node-to-workspace A'
-    shift-b = 'move-node-to-workspace B'
-    shift-c = 'move-node-to-workspace C'
-    shift-d = 'move-node-to-workspace D'
-    shift-e = 'move-node-to-workspace E'
-    shift-f = 'move-node-to-workspace F'
-    shift-g = 'move-node-to-workspace G'
-    shift-i = 'move-node-to-workspace I'
-    shift-m = 'move-node-to-workspace M'
-    shift-n = 'move-node-to-workspace N'
-    shift-o = 'move-node-to-workspace O'
-    shift-p = 'move-node-to-workspace P'
-    shift-q = 'move-node-to-workspace Q'
-    shift-r = 'move-node-to-workspace R'
-    shift-s = 'move-node-to-workspace S'
-    shift-t = 'move-node-to-workspace T'
-    shift-u = 'move-node-to-workspace U'
-    shift-v = 'move-node-to-workspace V'
-    shift-w = 'move-node-to-workspace W'
-    shift-x = 'move-node-to-workspace X'
-    shift-y = 'move-node-to-workspace Y'
-    shift-z = 'move-node-to-workspace Z'
+    cmd-alt-ctrl-shift-1 = 'move-node-to-workspace 1'
+    cmd-alt-ctrl-shift-2 = 'move-node-to-workspace 2'
+    cmd-alt-ctrl-shift-3 = 'move-node-to-workspace 3'
+    cmd-alt-ctrl-shift-4 = 'move-node-to-workspace 4'
+    cmd-alt-ctrl-shift-5 = 'move-node-to-workspace 5'
+    cmd-alt-ctrl-shift-6 = 'move-node-to-workspace 6'
+    cmd-alt-ctrl-shift-7 = 'move-node-to-workspace 7'
+    cmd-alt-ctrl-shift-8 = 'move-node-to-workspace 8'
+    cmd-alt-ctrl-shift-9 = 'move-node-to-workspace 9'
+    cmd-alt-ctrl-shift-a = 'move-node-to-workspace A'
+    cmd-alt-ctrl-shift-b = 'move-node-to-workspace B'
+    cmd-alt-ctrl-shift-c = 'move-node-to-workspace C'
+    cmd-alt-ctrl-shift-d = 'move-node-to-workspace D'
+    cmd-alt-ctrl-shift-e = 'move-node-to-workspace E'
+    cmd-alt-ctrl-shift-f = 'move-node-to-workspace F'
+    cmd-alt-ctrl-shift-g = 'move-node-to-workspace G'
+    cmd-alt-ctrl-shift-i = 'move-node-to-workspace I'
+    cmd-alt-ctrl-shift-m = 'move-node-to-workspace M'
+    cmd-alt-ctrl-shift-n = 'move-node-to-workspace N'
+    cmd-alt-ctrl-shift-o = 'move-node-to-workspace O'
+    cmd-alt-ctrl-shift-p = 'move-node-to-workspace P'
+    cmd-alt-ctrl-shift-q = 'move-node-to-workspace Q'
+    cmd-alt-ctrl-shift-r = 'move-node-to-workspace R'
+    cmd-alt-ctrl-shift-s = 'move-node-to-workspace S'
+    cmd-alt-ctrl-shift-t = 'move-node-to-workspace T'
+    cmd-alt-ctrl-shift-u = 'move-node-to-workspace U'
+    cmd-alt-ctrl-shift-v = 'move-node-to-workspace V'
+    cmd-alt-ctrl-shift-w = 'move-node-to-workspace W'
+    cmd-alt-ctrl-shift-x = 'move-node-to-workspace X'
+    cmd-alt-ctrl-shift-y = 'move-node-to-workspace Y'
+    cmd-alt-ctrl-shift-z = 'move-node-to-workspace Z'
 
     # workspace back-and-forth and move-workspace-to-monitor
-    tab = 'workspace-back-and-forth'
-    shift-tab = 'move-workspace-to-monitor --wrap-around next'
+    cmd-alt-ctrl-tab = 'workspace-back-and-forth'
+    cmd-alt-ctrl-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
