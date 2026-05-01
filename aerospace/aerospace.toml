@@ -69,6 +69,12 @@ run= [
   "layout floating",
 ]
 
+[[on-window-detected]]
+if.app-id="com.apple.Preview"
+run= [
+  "layout floating",
+]
+
 # Possible values: (qwerty|dvorak|colemak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
 [key-mapping]
