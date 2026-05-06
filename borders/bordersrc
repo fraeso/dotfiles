@@ -1,11 +1,10 @@
 #!/bin/bash
 
-# White standard
 options=(
 	style=round
-	width=6.0
+	width=5.0
 	hidpi=on
-	active_color=0xffe2e2e3
+	active_color=0xff89b4fa
 	inactive_color=0xff414550
 )
 

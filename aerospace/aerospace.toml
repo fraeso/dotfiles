@@ -50,7 +50,7 @@ automatically-unhide-macos-hidden-apps = false
 #                          "C", "D", "E", "F", "G", "I", "M", "N", "O", "P", "Q",
 #                          "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
-persistent-workspaces = [ "1", "2", "3", "4", "5", "6" ]
+persistent-workspaces = [ "1"]
 
 # A callback that runs every time binding mode changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
