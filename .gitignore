@@ -1,6 +1,6 @@
 neofetch/
 
-# ignore useless configs
+# ignore configs (useless ones + sensitive ones with credentials)
 tmux/plugins/*
 gh/
 
@@ -11,3 +11,5 @@ swiftpm/
 Futu-Mac/
 
 glow.yml
+
+firebase/
