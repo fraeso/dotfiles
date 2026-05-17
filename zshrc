@@ -135,10 +135,6 @@ eval "$(pyenv init -)"
 # starship prompt
 # eval "$(starship init zsh)"
 
-# asdf version manager
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-
-
 # ruby
 eval "$(~/.local/bin/mise activate)"
 
