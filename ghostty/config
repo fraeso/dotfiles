@@ -21,13 +21,12 @@ theme = vague
 font-size = 18
 
 # font-family = CaskaydiaCove Nerd Font
-font-family = JetBrains Mono 
-
+# font-family = Lilex Medium
+# font-family = JetBrains Mono 
 # font-family = FiraCode Nerd Font Mono
-# font-family-bold = Bold
 
-# font-family = SF Mono
-# font-family = Menlo
+font-family = Menlo
+# font-family = Monaco
 
 # background
 background-blur-radius = 40 
