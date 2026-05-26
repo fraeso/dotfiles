@@ -42,11 +42,11 @@ return {
             -- select     — small modal-style dialog, no preview
             -- left / right         — sidebar pinned to that edge
             -- top / bottom         — picker pinned to that edge
-            preset = "select",
+            preset = "sidebar",
             preview = false, -- true, false, or "main" to render preview in the main editor window
             layout = {
               position = "right",
-              -- width = 60,
+              width = 60,
             },
           },
         },
