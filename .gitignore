@@ -15,3 +15,8 @@ glow.yml
 firebase/
 
 tool_state
+
+# omniwm
+clipboard-history.json
+runtime-state.json
+

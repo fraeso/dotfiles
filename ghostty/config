@@ -25,14 +25,14 @@ font-size = 18
 # font-family = JetBrains Mono
 
 ### monolisa font tweaks
-font-family = MonoLisa Nerd Font Mono
-adjust-cell-height = 20%
+# font-family = MonoLisa Nerd Font Mono
+# adjust-cell-height = 20%
 ###
 
 # font-family = FiraCode Nerd Font Mono
 
 # font-family = Menlo
-# font-family = Monaco
+font-family = Monaco
 
 
 # background
