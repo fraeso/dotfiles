@@ -2,19 +2,12 @@
 
 options=(
 	style=round
-	width=5.0
-	hidpi=on
-	active_color=0xff89b4fa
-	inactive_color=0xff414550
+	width=6.0
+	hidpi=off
+	active_color=0xc0e2e2e3
+	inactive_color=0xc02c2e34
+	background_color=0x302c2e34
+	blur_radius=25
 )
-
-# Gradient — fancy two-tone
-# options=(
-# 	style=round
-# 	width=7.0
-# 	hidpi=on
-# 	active_color="gradient(top_left=0xffff5a96,bottom_right=0xffcba6f7)"
-# 	inactive_color=0x00000000
-# )
 
 borders "${options[@]}"
