@@ -2,15 +2,18 @@ return {
   "folke/snacks.nvim",
   opts = {
 
-    animate = { enabled = false, fps = 120 }, -- shared animation engine; cap is your monitor's refresh rate
+    animate = { enabled = true, fps = 120 }, -- shared animation engine; cap is your monitor's refresh rate
     indent = { enabled = false }, -- animated indent scope
     dim = { enabled = false }, -- animated scope dimming
     scroll = { enabled = true }, -- smooth scroll
     quickfile = { enabled = true }, -- renders the file before plugins finish loading; faster cold opens
 
     picker = {
-      prompt = " ", -- icon shown before your typed text (default is "  ")
       ui_select = true,
+      layout = {
+        preset = "ivy",
+        preview = true,
+      }, -- picker pinned to the bottom edge, with preview
       formatters = {
         file = {
           filename_first = true, -- show "foo.lua  src/path/" instead of "src/path/foo.lua" — scan filenames first
@@ -21,7 +24,8 @@ return {
       },
       win = {
         input = {
-          border = "rounded", -- none | single | double | rounded | solid | shadow
+          -- no border override: the "bottom"/ivy preset draws a single bottom underline.
+          -- a full box border (e.g. "rounded") gets clipped at the screen edges in this full-width layout.
           title = " Search ",
           title_pos = "center", -- left | center | right
           height = 1,
