@@ -50,7 +50,7 @@ return {
       options = {
         icons_enabled = true,
         theme = custom,
-        component_separators = { left = round.right_filled, right = round.left_filled },
+        component_separators = "", -- no inner dividers -> cleaner, more minimal
         refresh = {
           statusline = 100,
           tabline = 100,
@@ -66,55 +66,77 @@ return {
         globalstatus = true,
       },
       sections = {
-        lualine_a = { { "mode", icon = "", separator = { left = round.left, right = round.right } } },
+        lualine_a = {
+          {
+            "mode",
+            icon = "\u{f0e7}", --  (lightning)
+            separator = { left = round.left, right = round.right },
+            padding = { left = 0, right = 1 },
+          },
+        },
         lualine_b = {
           {
-            "filename",
-            icon = "",
-            colored = true,
+            "branch",
+            icon = "\u{f126}", --
           },
           {
-            "branch",
-            icon = "",
-            colored = true,
+            "diff",
+            colored = false, -- use the section's theme color instead of green/orange/red
+            symbols = {
+              added = "\u{f0fe} ", --
+              modified = "\u{f111} ", --
+              removed = "\u{f146} ", --
+            },
           },
         },
 
-        -- center components
+        -- center components (transparent)
         lualine_c = {
           {
-            "encoding",
-            icon = " ",
             "filename",
+            path = 1, -- relative path
+            symbols = { modified = " \u{f111}", readonly = " \u{f023}" }, --  /
             color = { bg = NO_BG },
           },
+          { "filetype", icon_only = true, separator = "", padding = { left = 0, right = 1 } },
         },
-        lualine_x = {
-          {
-            "diagnostics",
-            sources = { "nvim_lsp" },
-            sections = { "error", "warn" },
-            always_visible = true,
-          },
-        },
+        lualine_x = {},
 
         lualine_y = {
           {
-            "filetype",
+            "diagnostics",
+            sources = { "nvim_diagnostic" },
+            always_visible = true,
+            symbols = {
+              error = "\u{f06a} ", --
+              warn = "\u{f071} ", --
+              info = "\u{f05a} ", --
+              hint = "\u{f0eb} ", --
+            },
           },
-          {
-            "progress",
-            icon = "󰲽",
-          },
-          { "location" },
         },
         lualine_z = {
           {
+            -- active LSP server(s) attached to the current buffer
             function()
-              return os.date("%H:%M:%S")
+              local clients = vim.lsp.get_clients({ bufnr = 0 })
+              if #clients == 0 then
+                return ""
+              end
+              local names = {}
+              for _, client in ipairs(clients) do
+                names[#names + 1] = client.name
+              end
+              return table.concat(names, ", ")
+            end,
+            icon = "\u{f085}", --
+          },
+          {
+            function()
+              return os.date("%H:%M")
             end,
             separator = { right = round.right, left = round.left },
-            icon = "󰃰",
+            icon = "\u{f017}", --
           },
         },
       },
