@@ -16,7 +16,7 @@ require("lazy").setup({
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
     -- If you know what you're doing, you can set this to `true` to have all your custom plugins lazy-loaded by default.
-    lazy = false,
+    lazy = true,
     -- It's recommended to leave version=false for now, since a lot the plugin that support versioning,
     -- have outdated releases, which may break your Neovim install.
     version = false, -- always use the latest git commit
@@ -39,4 +39,19 @@ require("lazy").setup({
       },
     },
   },
+})
+
+-- Inline diagnostics: native Neovim 0.11+ replacement for lsp_lines.nvim.
+-- Deferred to VeryLazy so it runs AFTER LazyVim's own vim.diagnostic.config,
+-- otherwise LazyVim re-enables virtual_text and drops virtual_lines.
+vim.api.nvim_create_autocmd("User", {
+  pattern = "VeryLazy",
+  callback = function()
+    vim.diagnostic.config({
+      virtual_text = false, -- turn off the cramped end-of-line text
+      virtual_lines = true, -- full, wrapped messages below the offending line
+      -- Prefer only the line under the cursor (less noisy)? use instead:
+      -- virtual_lines = { current_line = true },
+    })
+  end,
 })
