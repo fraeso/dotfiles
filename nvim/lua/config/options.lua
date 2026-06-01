@@ -29,8 +29,8 @@ vim.opt.scrolloff = 10
 vim.opt.inccommand = "split"
 vim.opt.ignorecase = true
 -- vim.opt.smarttab = true
--- vim.opt.shiftwidth = 2
--- vim.opt.tabstop = 2
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
 vim.opt.backspace = { "start", "eol", "indent" }
 vim.opt.path:append({ "**" })
 -- vim.opt.mouse = ""

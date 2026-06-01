@@ -3,7 +3,17 @@ return {
   opts = {
 
     animate = { enabled = true, fps = 120 }, -- shared animation engine; cap is your monitor's refresh rate
-    indent = { enabled = false }, -- animated indent scope
+    indent = {
+      enabled = true,
+      indent = {
+        char = "┊", -- light quadruple dash (thinner than the heavy "┋")
+        hl = "Whitespace", -- match the space dots (dim, inactive guides)
+      },
+      scope = {
+        char = "┊", -- match the active-scope guide to the dashed style
+        -- no hl override: use snacks' default (bright/white) scope color
+      },
+    },
     dim = { enabled = false }, -- animated scope dimming
     scroll = { enabled = true }, -- smooth scroll
     quickfile = { enabled = true }, -- renders the file before plugins finish loading; faster cold opens
@@ -13,6 +23,9 @@ return {
       layout = {
         preset = "ivy",
         preview = true,
+        layout = {
+          height = 0.5, -- ivy default is 0.4 (40% of screen); raise to bring it up further
+        },
       }, -- picker pinned to the bottom edge, with preview
       formatters = {
         file = {
