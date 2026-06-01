@@ -1,4 +1,11 @@
 return {
+  -- {
+  --   "chomosuke/typst-preview.nvim",
+  --   opts = {
+  --     -- Open the preview in Chrome instead of the system default browser.
+  --     open_cmd = 'open -a "Google Chrome" %s',
+  --   },
+  -- },
   {
     "neovim/nvim-lspconfig",
     opts = {

@@ -21,7 +21,8 @@ theme = vague
 font-size = 18
 
 # font-family = CaskaydiaCove Nerd Font
-font-family = Lilex
+# font-family = Lilex
+font-family = IoskeleyMonoTerm Nerd Font
 
 # font-family = JetBrains Mono
 
@@ -34,7 +35,6 @@ font-family = Lilex
 
 # font-family = Menlo
 # font-family = Monaco
-# font-family = Monaco For Powerline
 
 
 # background
