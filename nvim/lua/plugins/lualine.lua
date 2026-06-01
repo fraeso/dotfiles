@@ -32,7 +32,7 @@ return {
     -- custom theme with transparent middle section
     -- themes:
     -- horizon, everforest, dracula, modus-vivendi, catppuccin, rose-pine, morta
-    local custom = require("lualine.themes.vague") -- !!!change lualine theme here!!!
+    local custom = require("lualine.themes.auto") -- follows whatever colorscheme is active
     local NO_BG = "NONE"
     -- Make the middle sections (c, x, y) transparent for ANY lualine theme.
     -- Done at the theme SOURCE so lualine's lazily-created separator/transitional

@@ -10,6 +10,9 @@ return {
         "NvimTreeNormal",
         "Pmenu", -- builtin popup menu / wildmenu
         "PmenuSel",
+        "TabLine", -- builtin tabline bg showing behind bufferline tabs
+        "TabLineFill",
+        "TabLineSel",
       },
       exclude_groups = {}, -- groups you want to KEEP a background on
     })
