@@ -34,12 +34,17 @@ return {
     -- horizon, everforest, dracula, modus-vivendi, catppuccin, rose-pine, morta
     local custom = require("lualine.themes.vague") -- !!!change lualine theme here!!!
     local NO_BG = "NONE"
-    -- custom.normal.c.bg = NO_BG
-    -- custom.insert.c.bg = NO_BG
-    -- custom.visual.c.bg = NO_BG
-    -- custom.replace.c.bg = NO_BG
-    -- custom.command.c.bg = NO_BG
-    -- custom.inactive.c.bg = NO_BG
+    -- Make the middle sections (c, x, y) transparent for ANY lualine theme.
+    -- Done at the theme SOURCE so lualine's lazily-created separator/transitional
+    -- highlights inherit NONE too. transparent.nvim can't fix those because they're
+    -- minted on-demand (e.g. when snacks picker opens) without firing ColorScheme.
+    for _, mode in pairs(custom) do
+      for _, section in ipairs({ "c", "x", "y" }) do
+        if mode[section] then
+          mode[section].bg = NO_BG
+        end
+      end
+    end
 
     require("lualine").setup({
       options = {

@@ -38,9 +38,9 @@ vim.opt.formatoptions:append({ "r" })
 
 vim.opt.shortmess:append("A")
 
--- disable indent lines
-vim.opt.list = false
-vim.opt.listchars = ""
+-- show space as dots
+vim.opt.list = true
+vim.opt.listchars = vim.opt.listchars + "space:·"
 
 -- Disable LazyVim's autoformat
 vim.g.autoformat = false
