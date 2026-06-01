@@ -123,7 +123,7 @@ return {
           -- no file open: a single minimal glyph, nothing else
           {
             function()
-              return "\u{f1183}" --
+              return "\u{f02a0}" -- 󰊠 (ghost)
             end,
             cond = function()
               return not has_file()
@@ -160,7 +160,7 @@ return {
               for _, client in ipairs(clients) do
                 names[#names + 1] = client.name
               end
-              return "\u{f085} " .. table.concat(names, ", ") --
+              return "\u{f013} " .. table.concat(names, ", ") --
             end,
             separator = { right = round.right, left = round.left },
           },
