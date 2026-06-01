@@ -22,7 +22,8 @@ font-size = 18
 
 # font-family = CaskaydiaCove Nerd Font
 # font-family = Lilex
-font-family = IoskeleyMonoTerm Nerd Font
+font-family = IoskeleyMonoTerm Nerd Font Medium
+# font-family = UbuntuMono Nerd Font
 
 # font-family = JetBrains Mono
 

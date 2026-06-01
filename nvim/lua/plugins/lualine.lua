@@ -46,6 +46,11 @@ return {
       end
     end
 
+    -- true when the current buffer is backed by a real (named) file
+    local function has_file()
+      return vim.api.nvim_buf_get_name(0) ~= ""
+    end
+
     require("lualine").setup({
       options = {
         icons_enabled = true,
@@ -69,7 +74,7 @@ return {
         lualine_a = {
           {
             "mode",
-            icon = "\u{f0e7}", --  (lightning)
+            icon = "\u{ebca}", 
             separator = { left = round.left, right = round.right },
             padding = { left = 0, right = 1 },
           },
@@ -78,6 +83,13 @@ return {
           {
             "branch",
             icon = "\u{f126}", --
+            -- cap displayed branch name at 24 chars (incl. the ellipsis)
+            fmt = function(name)
+              if #name > 24 then
+                return name:sub(1, 21) .. "..."
+              end
+              return name
+            end,
           },
           {
             "diff",
@@ -92,13 +104,32 @@ return {
 
         -- center components (transparent)
         lualine_c = {
+          -- real file: relative path + status symbols
           {
             "filename",
             path = 1, -- relative path
             symbols = { modified = " \u{f111}", readonly = " \u{f023}" }, --  /
             color = { bg = NO_BG },
+            cond = has_file,
           },
-          { "filetype", icon_only = true, separator = "", padding = { left = 0, right = 1 } },
+          -- real file: filetype icon
+          {
+            "filetype",
+            icon_only = true,
+            separator = "",
+            padding = { left = 0, right = 1 },
+            cond = has_file,
+          },
+          -- no file open: a single minimal glyph, nothing else
+          {
+            function()
+              return "\u{f1183}" --
+            end,
+            cond = function()
+              return not has_file()
+            end,
+            color = { bg = NO_BG },
+          },
         },
         lualine_x = {},
 
@@ -106,7 +137,7 @@ return {
           {
             "diagnostics",
             sources = { "nvim_diagnostic" },
-            always_visible = true,
+            always_visible = false,
             symbols = {
               error = "\u{f06a} ", --
               warn = "\u{f071} ", --
