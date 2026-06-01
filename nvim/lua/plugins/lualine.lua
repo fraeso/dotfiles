@@ -74,7 +74,7 @@ return {
         lualine_a = {
           {
             "mode",
-            icon = "\u{ebca}", 
+            icon = "\u{f0633}", -- \udb82\udfc9
             separator = { left = round.left, right = round.right },
             padding = { left = 0, right = 1 },
           },
@@ -104,13 +104,26 @@ return {
 
         -- center components (transparent)
         lualine_c = {
-          -- real file: relative path + status symbols
+          -- real file: relative path. file_status is off so lualine never appends
+          -- the modified/readonly block (and its stray space) — dirty state lives on
+          -- the bufferline tab; the readonly lock is its own component below.
           {
             "filename",
             path = 1, -- relative path
-            symbols = { modified = " \u{f111}", readonly = " \u{f023}" }, --  /
+            file_status = false,
             color = { bg = NO_BG },
             cond = has_file,
+          },
+          -- readonly lock, only when the buffer can't be edited
+          {
+            function()
+              return "\u{f023}" --
+            end,
+            cond = function()
+              return has_file() and (vim.bo.readonly or not vim.bo.modifiable)
+            end,
+            color = { bg = NO_BG },
+            padding = { left = 0, right = 1 },
           },
           -- real file: filetype icon
           {
@@ -142,7 +155,7 @@ return {
             symbols = {
               error = "\u{f06a} ", --
               warn = "\u{f071} ", --
-              info = "\u{f05a} ", --
+              info = "\u{ea74} ", --
               hint = "\u{f0eb} ", --
             },
           },

@@ -19,7 +19,7 @@ return {
       options = {
         separator_style = "thin", -- "slant", "padded_slant", "thin"
         indicator = { style = "none" },
-        always_show_bufferline = false,
+        always_show_bufferline = true,
         diagnostics = "nvim_lsp",
         offsets = {
           {
