@@ -134,6 +134,7 @@ return {
         lualine_x = {},
 
         lualine_y = {
+          { "encoding", icon = "\u{f121} " }, --
           {
             "diagnostics",
             sources = { "nvim_diagnostic" },
@@ -148,26 +149,20 @@ return {
         },
         lualine_z = {
           {
-            -- active LSP server(s) attached to the current buffer
+            -- active LSP server(s) attached to the current buffer, with a
+            -- fallback icon when nothing is attached
             function()
               local clients = vim.lsp.get_clients({ bufnr = 0 })
               if #clients == 0 then
-                return ""
+                return "\u{f127} " --  (no LSP attached)
               end
               local names = {}
               for _, client in ipairs(clients) do
                 names[#names + 1] = client.name
               end
-              return table.concat(names, ", ")
-            end,
-            icon = "\u{f085}", --
-          },
-          {
-            function()
-              return os.date("%H:%M")
+              return "\u{f085} " .. table.concat(names, ", ") --
             end,
             separator = { right = round.right, left = round.left },
-            icon = "\u{f017}", --
           },
         },
       },
