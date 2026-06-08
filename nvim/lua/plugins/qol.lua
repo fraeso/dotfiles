@@ -10,8 +10,14 @@ return {
   },
 
   -- vim-sleuth — auto-detect indentation (shiftwidth/expandtab) per file/project.
+  -- {
+  --   "tpope/vim-sleuth",
+  -- },
   {
-    "tpope/vim-sleuth",
+    "nmac427/guess-indent.nvim",
+    config = function()
+      require("guess-indent").setup({})
+    end,
   },
 
   -- vim-tmux-navigator — move seamlessly between nvim splits and tmux panes

@@ -39,8 +39,8 @@ font-family = IoskeleyMonoTerm Nerd Font Medium
 
 
 # background
-background-blur-radius = 40 
-background-opacity = 0.9
+background-blur-radius = 70
+background-opacity = 0.94
 
 # window settings
 window-decoration = true
