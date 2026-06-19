@@ -22,7 +22,8 @@ font-size = 18
 
 # font-family = CaskaydiaCove Nerd Font
 # font-family = Lilex
-font-family = IoskeleyMonoTerm Nerd Font Medium
+# font-family = IoskeleyMonoTerm Nerd Font Medium
+font-family = Iosevka Custom
 # font-family = UbuntuMono Nerd Font
 
 # font-family = JetBrains Mono
@@ -39,8 +40,8 @@ font-family = IoskeleyMonoTerm Nerd Font Medium
 
 
 # background
-background-blur-radius = 70
-background-opacity = 0.94
+background-blur-radius = 20
+background-opacity = 0.90
 
 # window settings
 window-decoration = true
