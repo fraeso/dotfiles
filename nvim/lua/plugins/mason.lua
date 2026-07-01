@@ -10,6 +10,7 @@ return {
       "golangci-lint",
       "rust-analyzer",
       "typescript-language-server",
+      "css-lsp",
     },
   },
 }

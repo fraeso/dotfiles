@@ -6,6 +6,7 @@ return {
       go = { "gofumpt" },
       java = { "google-java-format" },
       xml = { "xmllint" },
+      markdown = { "markdownlint-cli2" },
     },
   },
 }

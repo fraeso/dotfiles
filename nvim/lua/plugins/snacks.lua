@@ -1,5 +1,10 @@
 return {
   "folke/snacks.nvim",
+  keys = {
+    -- free these up for diffview.nvim (see plugins/diffview.lua)
+    { "<leader>gd", false },
+    { "<leader>gD", false },
+  },
   opts = {
 
     animate = { enabled = true, fps = 120 }, -- shared animation engine; cap is your monitor's refresh rate
