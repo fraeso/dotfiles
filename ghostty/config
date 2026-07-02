@@ -56,8 +56,8 @@ font-family = Maple Mono NF
 
 
 # background
-background-blur-radius = 20
-background-opacity = 0.90
+background-blur-radius = 35
+background-opacity = 0.91
 
 # window settings
 window-decoration = true
