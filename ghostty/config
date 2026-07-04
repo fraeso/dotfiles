@@ -18,7 +18,7 @@ theme = vague
 
 
 # font
-font-size = 18
+font-size = 16
 
 # font-family = CaskaydiaCove Nerd Font
 # font-family = Lilex
@@ -97,5 +97,5 @@ keybind = cmd+option+up=unbind
 keybind = cmd+option+down=unbind
 
 # pane/split settings
-unfocused-split-opacity = 0.4
+unfocused-split-opacity = 0.6
 split-divider-color = #6e738d
