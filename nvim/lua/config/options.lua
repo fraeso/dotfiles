@@ -44,3 +44,8 @@ vim.opt.listchars = vim.opt.listchars + "space:·"
 
 -- Disable LazyVim's autoformat
 vim.g.autoformat = false
+
+vim.filetype.add({
+  filename = { [".env"] = "conf" },
+  pattern = { ["%.env%.[%w_.-]+"] = "conf" },
+})
