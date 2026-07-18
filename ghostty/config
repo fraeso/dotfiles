@@ -27,7 +27,7 @@ font-feature = -liga, -calt, -dlig
 # font-family = UbuntuMono Nerd Font
 # font-family = Maple Mono NF
 # monaspace configs (enable ligature) - krypton is minecraft font
-font-family = JetBrainsMono Nerd Font Mono
+font-family = JetBrainsMono Nerd Font
 ### monolisa font tweaks
 # font-family = MonoLisa Nerd Font Mono
 # adjust-cell-height = 20%
