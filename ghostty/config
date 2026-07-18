@@ -19,51 +19,37 @@ theme = vague
 
 # font
 font-size = 16
-
+font-feature = -liga, -calt, -dlig
 # font-family = CaskaydiaCove Nerd Font
 # font-family = Lilex
 # font-family = IoskeleyMonoTerm Nerd Font Medium
 # font-family = Iosevka Custom
 # font-family = UbuntuMono Nerd Font
 # font-family = Maple Mono NF
-
 # monaspace configs (enable ligature) - krypton is minecraft font
-# font-family = Monaspace Krypton NF
-# font-feature = calt
-# font-feature = liga
-# font-feature = ss01
-# font-feature = ss02
-# font-feature = ss03
-# font-feature = ss04
-# font-feature = ss05
-# font-feature = ss06
-# font-feature = ss07
-# font-feature = ss08
-# font-feature = ss09
-# font-feature = ss10
-
-font-family = JetBrains Mono
-
+font-family = JetBrainsMono Nerd Font Mono
 ### monolisa font tweaks
 # font-family = MonoLisa Nerd Font Mono
 # adjust-cell-height = 20%
 ###
-
 # font-family = FiraCode Nerd Font Mono
-
 # font-family = Menlo
 # font-family = Monaco
 
+cursor-style = block
+cursor-style-blink = false
+cursor-color = cell-foreground
+cursor-text = cell-background
 
 # background
-background-blur-radius = 35
-background-opacity = 0.91
+background-blur-radius = 25
+background-opacity = 0.88
 
 # window settings
-window-decoration = true
+window-decoration = auto
 window-theme = ghostty
 window-padding-balance = true
-window-padding-x = 15
+window-padding-x = 5
 window-padding-y = 5
 
 # ghostty icon
@@ -83,6 +69,7 @@ macos-option-as-alt=true
 keybind = shift+enter=text:\n
 window-theme = "auto"
 macos-titlebar-style = tabs
+confirm-close-surface = false
 
 # vim-style pane navigation
 keybind = cmd+option+h=goto_split:left
@@ -97,5 +84,5 @@ keybind = cmd+option+up=unbind
 keybind = cmd+option+down=unbind
 
 # pane/split settings
-unfocused-split-opacity = 0.6
-split-divider-color = #6e738d
+unfocused-split-opacity = 0.55
+split-divider-color = #524f67
