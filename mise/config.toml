@@ -1,2 +1,4 @@
 [tools]
+elixir = "1.19.4-otp-28"
 ruby = "3"
+erlang = "28.2"
