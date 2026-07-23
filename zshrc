@@ -141,7 +141,7 @@ eval "$(~/.local/bin/mise activate)"
 # flutter
 export PATH="$HOME/fvm/default/bin:$PATH"
 
-fastfetch -c examples/22.jsonc
+# fastfetch -c examples/22.jsonc
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
