@@ -23,18 +23,16 @@ font-feature = -liga, -calt, -dlig
 # font-family = CaskaydiaCove Nerd Font
 # font-family = Lilex
 # font-family = IoskeleyMonoTerm Nerd Font Medium
-# font-family = Iosevka Custom
+font-family = Iosevka Custom
 # font-family = UbuntuMono Nerd Font
 # font-family = Maple Mono NF
-# monaspace configs (enable ligature) - krypton is minecraft font
-font-family = JetBrainsMono Nerd Font
+# font-family = JetBrainsMono Nerd Font
+# font-family = Monaspace Radon NF
+# font-family = Monaspace Krypton NF
+
 ### monolisa font tweaks
 # font-family = MonoLisa Nerd Font Mono
 # adjust-cell-height = 20%
-###
-# font-family = FiraCode Nerd Font Mono
-# font-family = Menlo
-# font-family = Monaco
 
 cursor-style = block
 cursor-style-blink = false
