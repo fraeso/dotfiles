@@ -19,7 +19,7 @@ theme = vague
 
 # font
 font-size = 16
-font-feature = -liga, -calt, -dlig
+font-feature = +liga, +calt, +dlig
 # font-family = CaskaydiaCove Nerd Font
 # font-family = Lilex
 # font-family = IoskeleyMonoTerm Nerd Font Medium
