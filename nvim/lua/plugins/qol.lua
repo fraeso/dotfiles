@@ -9,10 +9,62 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       diagnostics = {
-        -- virtual_text left at LazyVim's default: message to the right of the code
-        virtual_lines = false, -- no wrapped message block below the line
+        virtual_text = true, -- message to the right of the code (handler below)
+        virtual_lines = false, -- no wrapped message block under the line
       },
     },
+    init = function()
+      -- Two-tone end-of-line diagnostics, cendre-style: a severity-coloured icon
+      -- followed by the message in quiet italic. The built-in virtual_text handler
+      -- paints icon and message with one highlight group, so it can't do this —
+      -- hence the replacement. One extmark namespace per diagnostic namespace, or
+      -- two LSPs on the same buffer would clear each other's marks.
+      local icons = { "■", "▲", "◆", "●" } -- ERROR, WARN, INFO, HINT
+      local groups = { "DiagnosticError", "DiagnosticWarn", "DiagnosticInfo", "DiagnosticHint" }
+      local nss = setmetatable({}, {
+        __index = function(t, k)
+          local ns = vim.api.nvim_create_namespace("cendre_diag_vt_" .. k)
+          rawset(t, k, ns)
+          return ns
+        end,
+      })
+
+      vim.diagnostic.handlers.virtual_text = {
+        show = function(namespace, bufnr, diagnostics, _)
+          if not vim.api.nvim_buf_is_loaded(bufnr) then
+            return
+          end
+          local ns = nss[namespace]
+          vim.api.nvim_buf_clear_namespace(bufnr, ns, 0, -1)
+          -- one message per line: the most severe (severity 1 = ERROR). Lines past
+          -- the end of the buffer are dropped — diagnostics arrive asynchronously
+          -- and can outlive the lines they were computed against.
+          local last = vim.api.nvim_buf_line_count(bufnr) - 1
+          local worst = {}
+          for _, d in ipairs(diagnostics) do
+            local cur = worst[d.lnum]
+            if d.lnum <= last and (not cur or d.severity < cur.severity) then
+              worst[d.lnum] = d
+            end
+          end
+          for lnum, d in pairs(worst) do
+            vim.api.nvim_buf_set_extmark(bufnr, ns, lnum, 0, {
+              virt_text = {
+                { "    " .. icons[d.severity] .. " ", groups[d.severity] },
+                { d.message:gsub("%s*\n%s*", " "), "DiagnosticVirtualTextDim" },
+              },
+              virt_text_pos = "eol",
+              hl_mode = "combine",
+            })
+          end
+        end,
+        hide = function(namespace, bufnr)
+          if vim.api.nvim_buf_is_valid(bufnr) then
+            vim.api.nvim_buf_clear_namespace(bufnr, nss[namespace], 0, -1)
+          end
+        end,
+      }
+    end,
   },
 
   -- mini.surround — add/delete/replace surrounding pairs (quotes, brackets, tags).

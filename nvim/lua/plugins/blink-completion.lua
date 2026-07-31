@@ -42,8 +42,5 @@ return {
     end
 
     require("blink.cmp").setup(opts)
-
-    -- Note: Color/style configurations have been moved to the xcodedark theme
-    -- They will be automatically applied when the xcodedark theme is loaded
   end,
 }
