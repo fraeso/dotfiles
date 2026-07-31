@@ -16,7 +16,10 @@ return {
       },
       scope = {
         char = "┊", -- match the active-scope guide to the dashed style
-        -- no hl override: use snacks' default (bright/white) scope color
+        -- cendre paints SnacksIndentScope a near-background grey, so the active
+        -- guide vanishes. Special is the theme's accent (ember) — bright, and
+        -- still follows whatever colourscheme is loaded.
+        hl = "Special",
       },
     },
     dim = { enabled = false }, -- animated scope dimming
