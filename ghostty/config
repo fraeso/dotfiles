@@ -40,8 +40,9 @@ cursor-color = cell-foreground
 cursor-text = cell-background
 
 # background
-background-blur-radius = 25
-background-opacity = 0.88
+# background-blur-radius = 25
+# background-opacity = 0.88
+background-opacity = 1
 
 # window settings
 window-decoration = auto
