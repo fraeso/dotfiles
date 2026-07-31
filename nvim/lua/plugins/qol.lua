@@ -2,6 +2,22 @@
 -- lazy.nvim accepts a list of specs from a single file, so each entry below
 -- is its own plugin. Comment headers explain what each one is for.
 return {
+  -- Inline diagnostics: native Neovim 0.11+ replacement for lsp_lines.nvim.
+  -- Must go through LazyVim's `diagnostics` opts — LazyVim calls
+  -- vim.diagnostic.config() in nvim-lspconfig's config(), which runs after
+  -- VeryLazy and would clobber a plain autocmd (re-enabling virtual_text).
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      diagnostics = {
+        virtual_text = false, -- turn off the cramped end-of-line text
+        virtual_lines = true, -- full, wrapped messages below the offending line
+        -- Prefer only the line under the cursor (less noisy)? use instead:
+        -- virtual_lines = { current_line = true },
+      },
+    },
+  },
+
   -- mini.surround — add/delete/replace surrounding pairs (quotes, brackets, tags).
   -- Remapped to a `gs` prefix so flash.nvim can keep `s` for its jump motion:
   -- `gsaiw)` surround-add inner word with parens, `gsd"` delete surrounding quotes,
@@ -39,6 +55,7 @@ return {
   -- },
   {
     "nmac427/guess-indent.nvim",
+    lazy = false,
     config = function()
       require("guess-indent").setup({})
     end,
