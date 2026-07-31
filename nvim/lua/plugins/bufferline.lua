@@ -5,17 +5,12 @@ return {
   config = function()
     vim.opt.termguicolors = true
 
-    -- Colours read off the live colorscheme rather than pinned, so a theme
-    -- switch carries the bar with it. `Special` is the accent in most themes
-    -- (ember, in cendre) and `Comment` the dimmest readable foreground.
     local function from(group)
       return { attribute = "fg", highlight = group }
     end
     local accent, dim, ink = from("Special"), from("Comment"), from("Normal")
 
-    -- Only the active tab is marked: the name at full strength with an accent
-    -- rule under it. Every *_selected group repeats the underline, or the rule
-    -- breaks wherever bufferline switches highlight mid-tab.
+    -- every *_selected group repeats the underline, or the rule breaks apart
     local selected = { bg = "none", fg = ink, sp = accent, underline = true, bold = true, italic = false }
 
     require("bufferline").setup({
@@ -33,27 +28,17 @@ return {
         indicator_selected = { bg = "none", fg = accent, sp = accent, underline = true },
       },
       options = {
-        separator_style = { "", "" }, -- no dividers between tabs
+        separator_style = { "", "" },
         indicator = { style = "underline" },
 
-        -- Tabs size to their name. `tab_size` is a *minimum* width that
-        -- bufferline pads shorter tabs up to, split evenly across both sides —
-        -- that was the ____filename____ gap, and the reason the rule ran wide.
-        tab_size = 0,
-        -- A tab is built as: indicator, name, space, modified marker, space
-        -- (ui.lua:485) — one cell of lead against three of trail, which is why
-        -- the name sat left of centre. Two more on the left evens it up.
+        tab_size = 0, -- minimum width, padded evenly onto both sides
         name_formatter = function(buf)
-          return "  " .. buf.name
+          return "  " .. buf.name -- offsets the modified marker's trailing space
         end,
-        -- and with close icons off, bufferline adds the icon's width back onto
-        -- the left as compensation. Emptying the icon makes that zero.
         show_buffer_close_icons = false,
-        buffer_close_icon = "",
+        buffer_close_icon = "", -- hidden icons still reserve their width
         show_close_icon = false,
 
-        -- Names, nothing else: no filetype icon (that was the blue/orange) and
-        -- no diagnostic tinting, which recoloured a whole tab on a stray hint.
         show_buffer_icons = false,
         diagnostics = false,
 

@@ -59,7 +59,7 @@ background-opacity = 0.93
 window-decoration = auto
 window-theme = ghostty
 window-padding-balance = true
-window-padding-x = 0
+window-padding-x = 15
 window-padding-y = 0 
 
 # ghostty icon

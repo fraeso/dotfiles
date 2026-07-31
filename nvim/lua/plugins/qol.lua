@@ -2,23 +2,17 @@
 -- lazy.nvim accepts a list of specs from a single file, so each entry below
 -- is its own plugin. Comment headers explain what each one is for.
 return {
-  -- Inline diagnostics. Must go through LazyVim's `diagnostics` opts — LazyVim
-  -- calls vim.diagnostic.config() in nvim-lspconfig's config(), which runs after
-  -- VeryLazy and would clobber a plain autocmd.
   {
     "neovim/nvim-lspconfig",
     opts = {
       diagnostics = {
-        virtual_text = true, -- message to the right of the code (handler below)
-        virtual_lines = false, -- no wrapped message block under the line
+        virtual_text = true,
+        virtual_lines = false,
       },
     },
+    -- end-of-line diagnostics with a coloured icon and a dim message; the
+    -- built-in handler paints both with one highlight group, so it's replaced
     init = function()
-      -- Two-tone end-of-line diagnostics, cendre-style: a severity-coloured icon
-      -- followed by the message in quiet italic. The built-in virtual_text handler
-      -- paints icon and message with one highlight group, so it can't do this —
-      -- hence the replacement. One extmark namespace per diagnostic namespace, or
-      -- two LSPs on the same buffer would clear each other's marks.
       local icons = { "■", "▲", "◆", "●" } -- ERROR, WARN, INFO, HINT
       local groups = { "DiagnosticError", "DiagnosticWarn", "DiagnosticInfo", "DiagnosticHint" }
       local nss = setmetatable({}, {
@@ -36,9 +30,7 @@ return {
           end
           local ns = nss[namespace]
           vim.api.nvim_buf_clear_namespace(bufnr, ns, 0, -1)
-          -- one message per line: the most severe (severity 1 = ERROR). Lines past
-          -- the end of the buffer are dropped — diagnostics arrive asynchronously
-          -- and can outlive the lines they were computed against.
+          -- worst severity per line; async diagnostics can outlive their lines
           local last = vim.api.nvim_buf_line_count(bufnr) - 1
           local worst = {}
           for _, d in ipairs(diagnostics) do
