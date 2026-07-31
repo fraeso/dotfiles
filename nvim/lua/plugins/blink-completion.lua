@@ -15,7 +15,9 @@ return {
       menu = {
         auto_show = true,
         border = "rounded",
-        winhighlight = "Normal:Pmenu,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+        -- no winhighlight override: blink's default maps to the BlinkCmp*
+        -- groups, which the colourscheme makes transparent. Pointing Normal at
+        -- Pmenu was what kept a solid background here.
         scrollbar = true,
       },
       documentation = {

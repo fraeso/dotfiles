@@ -40,18 +40,3 @@ require("lazy").setup({
     },
   },
 })
-
--- Inline diagnostics: native Neovim 0.11+ replacement for lsp_lines.nvim.
--- Deferred to VeryLazy so it runs AFTER LazyVim's own vim.diagnostic.config,
--- otherwise LazyVim re-enables virtual_text and drops virtual_lines.
-vim.api.nvim_create_autocmd("User", {
-  pattern = "VeryLazy",
-  callback = function()
-    vim.diagnostic.config({
-      virtual_text = false, -- turn off the cramped end-of-line text
-      virtual_lines = true, -- full, wrapped messages below the offending line
-      -- Prefer only the line under the cursor (less noisy)? use instead:
-      -- virtual_lines = { current_line = true },
-    })
-  end,
-})
