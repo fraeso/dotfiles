@@ -20,12 +20,21 @@ theme = cendre
 
 
 # font
-font-size = 16
+font-size = 15
 font-feature = +liga, +calt, +dlig
+
+# heavier diagnostic dashes. This is a delta, not an absolute: +2px
+adjust-underline-thickness = 2
+
+### SF Mono ###
+font-family = Liga SFMono Nerd Font Medium
+adjust-cell-height = 40%
+###
+
 # font-family = CaskaydiaCove Nerd Font
 # font-family = Lilex
 # font-family = IoskeleyMonoTerm Nerd Font Medium
-font-family = Iosevka Custom
+# font-family = Iosevka Custom
 # font-family = UbuntuMono Nerd Font
 # font-family = Maple Mono NF
 # font-family = JetBrainsMono Nerd Font
@@ -50,8 +59,8 @@ background-opacity = 0.93
 window-decoration = auto
 window-theme = ghostty
 window-padding-balance = true
-window-padding-x = 5
-window-padding-y = 5
+window-padding-x = 0
+window-padding-y = 0 
 
 # ghostty icon
 # macos-icon = official
