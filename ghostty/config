@@ -2,10 +2,11 @@
 
 # theme = catppuccin mocha
 # theme = rose pine 
-theme = vague
+# theme = vague
 # theme = Github Dark
 # theme = Kanagawa Wave
-# theme = Mellow
+# theme = Treehouse
+theme = Mellow
 # theme = Material Ocean
 # theme = Horizon
 # theme = Ayu Mirage
@@ -40,9 +41,9 @@ cursor-color = cell-foreground
 cursor-text = cell-background
 
 # background
-# background-blur-radius = 25
-# background-opacity = 0.88
-background-opacity = 1
+background-blur-radius = 25
+background-opacity = 0.93
+# background-opacity = 1
 
 # window settings
 window-decoration = auto
