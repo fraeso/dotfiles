@@ -1,11 +1,11 @@
 # 👾 Dotfiles
 
-<img width="1512" height="982" alt="elixir 6 26 22 am" src="https://github.com/user-attachments/assets/f8c1f542-0193-4bdd-95f7-755b01768639" />
-<img width="1512" height="982" alt="Screenshot 2025-08-29 at 6 33 30 am" src="https://github.com/user-attachments/assets/d1418fd0-d6b9-4489-926e-06c438b9a296" />
+<img width="2560" height="1440" alt="CleanShot 2026-08-02 at 19 14 26" src="https://github.com/user-attachments/assets/76ac35b2-6f45-4d90-9856-426426f2f39a" />
 
 ## Notes
 
 Photos may not be up to date.
+
 
 ## License
 
