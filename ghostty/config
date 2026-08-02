@@ -52,7 +52,7 @@ cursor-text = cell-background
 
 # background
 background-blur-radius = 25
-background-opacity = 0.93
+background-opacity = 0.95
 # background-opacity = 1
 
 # window settings
@@ -60,7 +60,7 @@ window-decoration = auto
 window-theme = ghostty
 window-padding-balance = true
 window-padding-x = 15
-window-padding-y = 0 
+window-padding-y = 15
 
 # ghostty icon
 # macos-icon = official
