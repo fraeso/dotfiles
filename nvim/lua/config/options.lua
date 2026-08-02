@@ -47,7 +47,4 @@ vim.g.autoformat = false
 vim.filetype.add({
   filename = { [".env"] = "conf" },
   pattern = { ["%.env%.[%w_.-]+"] = "conf" },
-  extension = {
-    templ = "templ"
-  }
 })

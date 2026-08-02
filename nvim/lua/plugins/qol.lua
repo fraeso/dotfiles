@@ -1,6 +1,3 @@
--- Small quality-of-life plugins grouped in one file to keep plugins/ tidy.
--- lazy.nvim accepts a list of specs from a single file, so each entry below
--- is its own plugin. Comment headers explain what each one is for.
 return {
   {
     "neovim/nvim-lspconfig",
@@ -59,10 +56,7 @@ return {
     end,
   },
 
-  -- mini.surround — add/delete/replace surrounding pairs (quotes, brackets, tags).
-  -- Remapped to a `gs` prefix so flash.nvim can keep `s` for its jump motion:
-  -- `gsaiw)` surround-add inner word with parens, `gsd"` delete surrounding quotes,
-  -- `gsr"'` replace surrounding " with '. In visual mode: select then `gsa*`.
+  -- `gs` prefix so flash.nvim keeps `s` for its jump motion
   {
     "nvim-mini/mini.surround",
     -- Lazy-load on first use of any surround key. Without this the plugin never
@@ -90,10 +84,6 @@ return {
     },
   },
 
-  -- vim-sleuth — auto-detect indentation (shiftwidth/expandtab) per file/project.
-  -- {
-  --   "tpope/vim-sleuth",
-  -- },
   {
     "nmac427/guess-indent.nvim",
     lazy = false,
@@ -102,8 +92,6 @@ return {
     end,
   },
 
-  -- vim-tmux-navigator — move seamlessly between nvim splits and tmux panes
-  -- with <c-h/j/k/l> (and <c-\> for the previous pane).
   {
     "christoomey/vim-tmux-navigator",
     cmd = {
@@ -122,20 +110,15 @@ return {
     },
   },
 
-  -- noice — replaces the cmdline/messages UI. Here only used to add a border to
-  -- LSP hover docs and signature help.
   {
     "folke/noice.nvim",
     opts = {
       presets = {
-        lsp_doc_border = true, -- add a border to hover docs and signature help
+        lsp_doc_border = true,
       },
     },
   },
 
-  -- mini.diff — git diff signs in the gutter, plus an inline overlay.
-  -- <leader>go toggles the overlay (colors line numbers + word-level diff);
-  -- the default 'sign' view shows gutter bars only.
   {
     "nvim-mini/mini.diff",
     opts = {
