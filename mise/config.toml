@@ -2,3 +2,4 @@
 elixir = "latest"
 ruby = "3"
 erlang = "latest"
+node = "lts"
