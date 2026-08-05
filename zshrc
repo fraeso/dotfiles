@@ -152,3 +152,15 @@ eval "$(pyenv init -)"
 
 # Dart/Flutter pub global executables (flutterfire CLI, etc.)
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+
+# Herd injected PHP 8.4 configuration.
+export HERD_PHP_84_INI_SCAN_DIR="/Users/austin/Library/Application Support/Herd/config/php/84/"
+
+
+# Herd injected PHP binary.
+export PATH="/Users/austin/Library/Application Support/Herd/bin/":$PATH
+
+
+# Herd injected PHP 8.5 configuration.
+export HERD_PHP_85_INI_SCAN_DIR="/Users/austin/Library/Application Support/Herd/config/php/85/"
