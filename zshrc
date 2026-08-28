@@ -119,6 +119,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # alias ls="eza --icons=always --long --no-time --no-user"
 alias ls="eza --icons=always"
 alias vim="nvim"
+alias zed="/Applications/Zed.app/Contents/MacOS/cli"
 
 # better cd
 alias cd="z"

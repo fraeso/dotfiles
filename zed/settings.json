@@ -1,0 +1,124 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  // AI and integrations
+  "agent_servers": {
+    "github-copilot-cli": {
+      "type": "registry"
+    }
+  },
+  "edit_predictions": {
+    "provider": "copilot",
+    "mode": "eager"
+  },
+  "show_edit_predictions": false,
+  "disable_ai": false,
+
+  // Privacy and session
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+    "anthropic_retention": false,
+  },
+  "session": {
+    "trust_all_worktrees": true,
+  },
+
+  // Appearance and typography
+  "icon_theme": "Soft Charmed Icons",
+  "theme": {
+    "mode": "system",
+    "light": "Rosé Pine Dawn",
+    "dark": "Rosé Pine",
+  },
+  "ui_font_family": "JetBrains Mono",
+  "ui_font_size": 15,
+  "buffer_font_family": "JetBrains Mono",
+  "buffer_font_size": 15.0,
+  "buffer_line_height": {
+    "custom": 1.6
+  },
+  "title_bar": {
+    "show_onboarding_banner": false,
+    "show_sign_in": false,
+  },
+  "status_bar": {
+    "experimental.show": true,
+  },
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_actions": false,
+    "selections_menu": false,
+  },
+  "tab_bar": {
+    "show": true,
+  },
+
+  // Editor
+  "format_on_save": "off",
+  "hide_mouse": "on_typing_and_action",
+  "relative_line_numbers": "enabled",
+  "inlay_hints": {
+    "enabled": false,
+  },
+  "scrollbar": {
+    "show": "never",
+  },
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware",
+    "active_line_width": 1,
+  },
+  "wrap_guides": [100],
+  "show_wrap_guides": true,
+  "preview_tabs": {
+    "enabled": false,
+  },
+
+  // Navigation and panels
+  "project_panel": {
+    "dock": "right",
+    "default_width": 400,
+    "hide_root": false,
+    "auto_fold_dirs": false,
+    "starts_open": false,
+    "sticky_scroll": true,
+    "scrollbar": {
+      "show": "never",
+    },
+    "indent_guides": {
+      // "show": "never",
+    },
+  },
+  "outline_panel": {
+    "default_width": 300,
+    "dock": "left",
+  },
+  "file_finder": {
+    "modal_max_width": "large"
+  },
+  "gutter": {
+    "min_line_number_digits": 0,
+    "folds": true,
+  },
+
+  // Source control
+  "git": {
+    "git_gutter": "tracked_files",
+    "inline_blame": {
+      "enabled": true,
+    },
+  },
+
+  // Vim
+  "vim_mode": true,
+  "vim": {
+    "use_system_clipboard": "on_yank",
+  },
+}
