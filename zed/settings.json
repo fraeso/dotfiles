@@ -8,14 +8,15 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   // AI and integrations
+  "cli_default_open_behavior": "existing_window",
   "agent_servers": {
     "github-copilot-cli": {
-      "type": "registry"
-    }
+      "type": "registry",
+    },
   },
   "edit_predictions": {
     "provider": "copilot",
-    "mode": "eager"
+    "mode": "eager",
   },
   "show_edit_predictions": false,
   "disable_ai": false,
@@ -37,12 +38,12 @@
     "light": "Rosé Pine Dawn",
     "dark": "Rosé Pine",
   },
-  "ui_font_family": "JetBrains Mono",
+  "ui_font_family": "JetBrainsMono Nerd Font",
   "ui_font_size": 15,
-  "buffer_font_family": "JetBrains Mono",
-  "buffer_font_size": 15.0,
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_size": 14.0,
   "buffer_line_height": {
-    "custom": 1.6
+    "custom": 1.6,
   },
   "title_bar": {
     "show_onboarding_banner": false,
@@ -101,11 +102,12 @@
     "dock": "left",
   },
   "file_finder": {
-    "modal_max_width": "large"
+    "modal_max_width": "large",
   },
   "gutter": {
     "min_line_number_digits": 0,
     "folds": true,
+    "runnables": false,
   },
 
   // Source control
@@ -121,4 +123,17 @@
   "vim": {
     "use_system_clipboard": "on_yank",
   },
+  "multi_cursor_modifier": "cmd_or_ctrl",
+  "cursor_shape": "block",
+  "cursor_blink": false,
+  "selection_highlight": true,
+  "drag_and_drop_selection": {
+    "enabled": false,
+  },
+  "current_line_highlight": "none",
+  "tab_size": 2,
+  "auto_indent": "syntax_aware",
+  "auto_indent_on_paste": false,
+  "auto_update": true,
+  "restore_on_startup": "empty_tab",
 }

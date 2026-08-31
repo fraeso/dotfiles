@@ -1,13 +1,13 @@
 # themes
 
 # theme = catppuccin mocha
-# theme = rose pine 
+theme = light:rose pine dawn,dark:rose pine
 # theme = vague
 # theme = Github Dark
 # theme = Kanagawa Wave
 # theme = Treehouse
 # theme = Mellow
-theme = cendre
+# theme = cendre
 # theme = Material Ocean
 # theme = Horizon
 # theme = Ayu Mirage
@@ -26,9 +26,11 @@ font-feature = +liga, +calt, +dlig
 # heavier diagnostic dashes. This is a delta, not an absolute: +2px
 adjust-underline-thickness = 2
 
-### SF Mono ###
-font-family = Liga SFMono Nerd Font Medium
+# larger cell height
 adjust-cell-height = 40%
+
+### SF Mono ###
+# font-family = Liga SFMono Nerd Font Medium
 ###
 
 # font-family = CaskaydiaCove Nerd Font
@@ -36,8 +38,8 @@ adjust-cell-height = 40%
 # font-family = IoskeleyMonoTerm Nerd Font Medium
 # font-family = Iosevka Custom
 # font-family = UbuntuMono Nerd Font
-# font-family = Maple Mono NF
-# font-family = JetBrainsMono Nerd Font
+font-family = Maple Mono NF Medium
+# font-family = JetBrains Mono Medium
 # font-family = Monaspace Radon NF
 # font-family = Monaspace Krypton NF
 
