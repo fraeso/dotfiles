@@ -36,9 +36,9 @@ adjust-cell-height = 40%
 # font-family = CaskaydiaCove Nerd Font
 # font-family = Lilex
 # font-family = IoskeleyMonoTerm Nerd Font Medium
-# font-family = Iosevka Custom
+font-family = Iosevka Custom
 # font-family = UbuntuMono Nerd Font
-font-family = Maple Mono NF Medium
+# font-family = Maple Mono NF Medium
 # font-family = JetBrains Mono Medium
 # font-family = Monaspace Radon NF
 # font-family = Monaspace Krypton NF
@@ -53,9 +53,8 @@ cursor-color = cell-foreground
 cursor-text = cell-background
 
 # background
-background-blur-radius = 25
-background-opacity = 0.95
-# background-opacity = 1
+# background-blur-radius = 25
+background-opacity = 1
 
 # window settings
 window-decoration = auto
