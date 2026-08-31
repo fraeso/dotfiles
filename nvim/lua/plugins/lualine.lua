@@ -147,5 +147,14 @@ return {
 
       extensions = {},
     })
+
+    -- terminal windows remap StatusLine -> StatusLineTerm, which themes paint opaque
+    local function clear_statusline_bg()
+      for _, g in ipairs({ "StatusLine", "StatusLineNC", "StatusLineTerm", "StatusLineTermNC" }) do
+        vim.api.nvim_set_hl(0, g, { bg = "NONE" })
+      end
+    end
+    vim.api.nvim_create_autocmd("ColorScheme", { callback = clear_statusline_bg })
+    clear_statusline_bg()
   end,
 }
