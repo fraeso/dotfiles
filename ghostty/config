@@ -96,4 +96,4 @@ keybind = cmd+option+down=unbind
 
 # pane/split settings
 unfocused-split-opacity = 0.80
-split-divider-color = #d7827f
+split-divider-color = #ebbcba
