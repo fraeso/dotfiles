@@ -53,8 +53,8 @@ cursor-color = cell-foreground
 cursor-text = cell-background
 
 # background
-# background-blur-radius = 25
-background-opacity = 1
+background-blur-radius = 40
+background-opacity = 0.95
 
 # window settings
 window-decoration = auto
@@ -95,5 +95,5 @@ keybind = cmd+option+up=unbind
 keybind = cmd+option+down=unbind
 
 # pane/split settings
-unfocused-split-opacity = 0.80
+unfocused-split-opacity = 0.75
 split-divider-color = #ebbcba
