@@ -25,6 +25,7 @@ font-feature = +liga, +calt, +dlig
 
 # heavier diagnostic dashes. This is a delta, not an absolute: +2px
 adjust-underline-thickness = 2
+adjust-underline-position = 18%
 
 # larger cell height
 adjust-cell-height = 40%

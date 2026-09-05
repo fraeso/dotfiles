@@ -64,18 +64,18 @@ return {
         },
       },
     },
-    dim = { enabled = false }, -- animated scope dimming
+    dim = { enabled = true }, -- animated scope dimming
     scroll = { enabled = true }, -- smooth scroll
     quickfile = { enabled = true }, -- renders the file before plugins finish loading; faster cold opens
 
     picker = {
       ui_select = true,
       layout = {
-        preset = "ivy",
+        preset = "vscode",
         preview = true,
-        layout = {
-          height = 0.5, -- ivy default is 0.4 (40% of screen); raise to bring it up further
-        },
+        -- layout = {
+        --   height = 0.5, -- ivy default is 0.4 (40% of screen); raise to bring it up further
+        -- },
       }, -- picker pinned to the bottom edge, with preview
       formatters = {
         file = {
