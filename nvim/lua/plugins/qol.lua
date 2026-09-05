@@ -151,6 +151,7 @@ return {
 
   {
     "b0o/incline.nvim",
+    enabled = false,
     event = "VeryLazy",
     opts = {
       highlight = {
