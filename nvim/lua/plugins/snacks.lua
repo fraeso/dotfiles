@@ -1,3 +1,32 @@
+-- explorer sidebar widens to its longest rendered line
+local function fit_explorer()
+  local picker = require("snacks.picker").get({ source = "explorer" })[1]
+  if not picker or not picker.list or not picker.list.win:valid() then
+    return
+  end
+
+  local box
+  for _, win in pairs(picker.layout.box_wins or {}) do
+    if win:valid() then
+      box = win.win
+    end
+  end
+  if not box then
+    return
+  end
+
+  local width = 0
+  for _, line in ipairs(vim.api.nvim_buf_get_lines(picker.list.win.buf, 0, -1, false)) do
+    width = math.max(width, vim.fn.strdisplaywidth(line))
+  end
+  width = math.min(math.max(width + 2, 30), math.floor(vim.o.columns * 0.4))
+
+  if vim.api.nvim_win_get_width(box) ~= width then
+    vim.api.nvim_win_set_width(box, width)
+    picker.layout:update()
+  end
+end
+
 return {
   "folke/snacks.nvim",
   keys = {
@@ -11,15 +40,28 @@ return {
     indent = {
       enabled = true,
       indent = {
-        char = "┊", -- light quadruple dash (thinner than the heavy "┋")
-        hl = "Whitespace", -- match the space dots (dim, inactive guides)
+        char = "┊",
+        -- rotating per level; groups defined in config() from the theme palette
+        hl = {
+          "SnacksIndent1",
+          "SnacksIndent2",
+          "SnacksIndent3",
+          "SnacksIndent4",
+          "SnacksIndent5",
+          "SnacksIndent6",
+        },
       },
       scope = {
-        char = "┊", -- match the active-scope guide to the dashed style
-        -- cendre paints SnacksIndentScope a near-background grey, so the active
-        -- guide vanishes. Special is the theme's accent (ember) — bright, and
-        -- still follows whatever colourscheme is loaded.
-        hl = "Special",
+        char = "┊",
+        -- same rotation, at full strength
+        hl = {
+          "SnacksIndentScope1",
+          "SnacksIndentScope2",
+          "SnacksIndentScope3",
+          "SnacksIndentScope4",
+          "SnacksIndentScope5",
+          "SnacksIndentScope6",
+        },
       },
     },
     dim = { enabled = false }, -- animated scope dimming
@@ -71,7 +113,7 @@ return {
             preview = false, -- true, false, or "main" to render preview in the main editor window
             layout = {
               position = "right",
-              width = 60,
+              width = 40,
             },
           },
         },
@@ -80,5 +122,56 @@ return {
   },
   config = function(_, opts)
     require("snacks").setup(opts)
+
+    -- indent guides / whitespace dots, from whatever theme is loaded:
+    -- six well-separated hues, faded toward the background for the inactive ones
+    local hues = {
+      "DiagnosticError",
+      "DiagnosticWarn",
+      "DiagnosticOk",
+      "DiagnosticInfo",
+      "DiagnosticHint",
+      "Function",
+    }
+
+    local function tint()
+      -- transparent themes leave Normal.bg unset; fade toward the terminal instead
+      local bg = vim.api.nvim_get_hl(0, { name = "Normal" }).bg
+        or (vim.o.background == "light" and 0xffffff or 0x000000)
+
+      local function fade(fg, alpha)
+        local channel = function(shift)
+          local f = bit.band(bit.rshift(fg, shift), 255)
+          local b = bit.band(bit.rshift(bg, shift), 255)
+          return math.floor(f * alpha + b * (1 - alpha) + 0.5)
+        end
+        return channel(16) * 0x10000 + channel(8) * 0x100 + channel(0)
+      end
+
+      for i, group in ipairs(hues) do
+        local fg = vim.api.nvim_get_hl(0, { name = group, link = false }).fg
+        if fg then
+          vim.api.nvim_set_hl(0, "SnacksIndent" .. i, { fg = fade(fg, 0.3) })
+          vim.api.nvim_set_hl(0, "SnacksIndentScope" .. i, { fg = fg })
+        end
+      end
+
+      local comment = vim.api.nvim_get_hl(0, { name = "Comment", link = false }).fg
+      if comment then
+        vim.api.nvim_set_hl(0, "Whitespace", { fg = fade(comment, 0.5) })
+        vim.api.nvim_set_hl(0, "SnacksPickerTree", { fg = fade(comment, 0.5) })
+      end
+    end
+
+    tint()
+    vim.api.nvim_create_autocmd("ColorScheme", { callback = tint })
+
+    vim.api.nvim_create_autocmd({ "BufWinEnter", "TextChanged", "CursorMoved" }, {
+      callback = function(ev)
+        if vim.bo[ev.buf].filetype == "snacks_picker_list" then
+          fit_explorer()
+        end
+      end,
+    })
   end,
 }
