@@ -162,4 +162,15 @@ return {
       },
     },
   },
+
+  {
+    "Wansmer/treesj",
+    keys = { { "<leader>m", desc = "Split/join node" } },
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    opts = { use_default_keymaps = false, max_join_length = 200 },
+    config = function(_, opts)
+      require("treesj").setup(opts)
+      vim.keymap.set("n", "<leader>m", require("treesj").toggle, { desc = "Split/join node" })
+    end,
+  },
 }
