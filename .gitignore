@@ -27,3 +27,5 @@ intelephense/
 psysh/
 
 github-copilot/
+
+zed/prompts/*
