@@ -97,4 +97,8 @@ keybind = cmd+option+down=unbind
 
 # pane/split settings
 unfocused-split-opacity = 0.75
-split-divider-color = #ebbcba
+split-divider-color = #db61a2
+
+# cursor
+# custom-shader =   "~/.config/ghostty/shaders/cursor_glide.glsl"
+# cursor-opacity = 0

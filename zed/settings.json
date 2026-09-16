@@ -95,6 +95,9 @@
   "preview_tabs": {
     "enabled": false,
   },
+  "cursor_animation" : {
+    "enabled": false,
+  },
 
   // Navigation and panels
   "project_panel": {
