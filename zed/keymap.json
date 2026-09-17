@@ -7,21 +7,37 @@
 // from the command palette.
 [
   {
-    "context": "Workspace",
-    "bindings": {
-      // "shift shift": "file_finder::Toggle"
-    },
-  },
-  {
-    "context": "Editor && vim_mode == insert",
-    "bindings": {
-      // "j k": "vim::NormalBefore"
-    },
-  },
-  {
     "context": "vim_mode == visual",
     "bindings": {
-      "shift-s": ["vim::PushAddSurrounds", {}],
+      "g s a": "vim::PushAddSurrounds",
+    },
+  },
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
+      "g s d": "vim::PushDeleteSurrounds",
+      "g s r": "vim::PushChangeSurrounds",
+    },
+  },
+  {
+    "context": "vim_mode == normal || Dock",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+    },
+  },
+  {
+    "context": "vim_mode == normal || vim_mode == visual",
+    "bindings": {
+      "space v": "pane::SplitRight",
+      "space s": "pane::SplitDown",
+      "g d": "editor::GoToDefinition",
+      "g r": "editor::FindAllReferences",
+      "g I": "editor::GoToImplementation",
+      "g y": "editor::GoToTypeDefinition",
+      "g D": "editor::GoToDeclaration",
     },
   },
 ]
