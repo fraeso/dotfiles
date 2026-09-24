@@ -28,7 +28,7 @@ adjust-underline-thickness = 2
 adjust-underline-position = 18%
 
 # larger cell height
-adjust-cell-height = 10%
+# adjust-cell-height = 10%
 
 ### SF Mono ###
 # font-family = Liga SFMono Nerd Font Medium
